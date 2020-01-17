@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="ul7-GF-F3L">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="wd5-IR-pr7" customClass="LoginViewController" customModule="GithubMembers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hCb-Uy-I8X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Github" translatesAutoresizingMaskIntoConstraints="NO" id="jXU-wj-9ff">
+                                <rect key="frame" x="5" y="49" width="404" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="gwD-gS-UKN"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeY-V2-Ttd">
+                                <rect key="frame" x="10" y="207" width="394" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Ih1-6a-K8B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wd5-IR-pr7" id="Iqq-j2-Q41"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TDk-Ud-xrT">
+                                <rect key="frame" x="10" y="251" width="394" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="wSi-Ng-YfT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wd5-IR-pr7" id="615-68-Xz4"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TDk-Ud-xrT" firstAttribute="leading" secondItem="FSF-ZM-X5b" secondAttribute="leading" constant="10" id="ABj-YF-ig9"/>
+                            <constraint firstItem="jXU-wj-9ff" firstAttribute="leading" secondItem="FSF-ZM-X5b" secondAttribute="leading" constant="5" id="ANI-sQ-Rsk"/>
+                            <constraint firstItem="FSF-ZM-X5b" firstAttribute="trailing" secondItem="jXU-wj-9ff" secondAttribute="trailing" constant="5" id="CTE-7J-Ld4"/>
+                            <constraint firstItem="TDk-Ud-xrT" firstAttribute="top" secondItem="XeY-V2-Ttd" secondAttribute="bottom" constant="10" id="RA4-Dm-THK"/>
+                            <constraint firstItem="FSF-ZM-X5b" firstAttribute="trailing" secondItem="TDk-Ud-xrT" secondAttribute="trailing" constant="10" id="bZ0-uY-ews"/>
+                            <constraint firstItem="jXU-wj-9ff" firstAttribute="top" secondItem="FSF-ZM-X5b" secondAttribute="top" constant="5" id="fbN-7o-JGm"/>
+                            <constraint firstItem="FSF-ZM-X5b" firstAttribute="trailing" secondItem="XeY-V2-Ttd" secondAttribute="trailing" constant="10" id="hc1-ce-d2J"/>
+                            <constraint firstItem="XeY-V2-Ttd" firstAttribute="leading" secondItem="FSF-ZM-X5b" secondAttribute="leading" constant="10" id="j6b-ea-5w6"/>
+                            <constraint firstItem="XeY-V2-Ttd" firstAttribute="top" secondItem="jXU-wj-9ff" secondAttribute="bottom" constant="30" id="kk5-hD-qnY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FSF-ZM-X5b"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordField" destination="TDk-Ud-xrT" id="ocl-pP-8tS"/>
+                        <outlet property="usernameField" destination="XeY-V2-Ttd" id="8PX-mG-J2y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CL5-WQ-HTz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5" y="47"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Github" width="40" height="40"/>
+    </resources>
+</document>
