@@ -28,23 +28,17 @@ class LogInTest: XCTestCase {
   }
 
   func testLogIn() {
-    let expectation = XCTestExpectation(description: "Login succeed.")
     mockNetwork.mockLogInResponse = User.mockUser()
     viewModel.isLoggedIn.subscribe(onNext: { isLoggedIn in
       XCTAssertTrue(isLoggedIn)
-      expectation.fulfill()
     }).disposed(by: bag)
     viewModel.logIn(username: "", password: "")
-    wait(for: [expectation], timeout: 1)
   }
 
   func testErrorPopup() {
-    let expectation = XCTestExpectation(description: "Show popup when there's an error.")
     viewModel.errorMessage.subscribe(onNext: { message in
       XCTAssertNotNil(message)
-      expectation.fulfill()
     }).disposed(by: bag)
     viewModel.logIn(username: "", password: "")
-    wait(for: [expectation], timeout: 1)
   }
 }

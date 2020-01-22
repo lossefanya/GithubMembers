@@ -36,13 +36,10 @@ class MemberDetailTests: XCTestCase {
   }
 
   func testErrorPopup() {
-    let expectation = XCTestExpectation(description: "Show popup when there's an error.")
     viewModel.errorMessage.subscribe(onNext: { message in
       XCTAssertNotNil(message)
-      expectation.fulfill()
     }).disposed(by: bag)
     viewModel.loadUserInfo()
-    wait(for: [expectation], timeout: 1)
   }
 }
 
